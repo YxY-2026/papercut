@@ -1,0 +1,77 @@
+page {
+  background: #fef7ed;
+}
+.container {
+  padding: 20rpx;
+}
+.top-bar {
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+.back {
+  font-size: 30rpx;
+}
+.author-info {
+  background: white;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+}
+.name {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.stats {
+  display: flex;
+  gap: 30rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+.follow-btn {
+  background: #c8161d;
+  color: white;
+  border-radius: 50rpx;
+  border: none;
+  height: 70rpx;
+  font-size: 28rpx;
+}
+.followed {
+  background: #eee !important;
+  color: #666 !important;
+}
+.list-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.work-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.item {
+  width: 48%;
+  background: white;
+  border-radius: 16rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.img {
+  width: 100%;
+  height: 240rpx;
+}
+.title {
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+.info {
+  padding: 0 20rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+  color: #888;
+}
+.item-hover {
+  opacity: 0.85;
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "智能剪纸转换",
+  "usingComponents": {
+    "comp": "../../comp"
+  }
+}

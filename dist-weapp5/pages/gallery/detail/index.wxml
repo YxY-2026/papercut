@@ -1,0 +1,41 @@
+<view class="page-container">
+  <view class="top-bar">
+    <view class="back-btn" bindtap="goBack">‹</view>
+    <text class="page-title">作品详情</text>
+  </view>
+
+  <image
+    class="work-img"
+    src="{{work.image}}"
+    mode="widthFix"
+    bindtap="previewImage"
+    show-menu-by-longpress="{{true}}"
+  ></image>
+
+  <view class="work-title">{{work.title}}</view>
+
+  <view class="author-bar">
+    <view class="author-info-wrap" bindtap="goAuthorWorks">
+      <view class="avatar"></view>
+      <text class="author-name">{{work.author}}</text>
+    </view>
+    <button class="follow-btn {{isFollowed ? 'followed' : ''}}" catchtap="doFollow">
+      {{isFollowed ? '已关注' : '关注'}}
+    </button>
+  </view>
+
+  <view class="action-bar">
+    <view class="action-item" bindtap="doLike">
+      <text class="icon {{isLiked ? 'liked' : ''}}">❤️</text>
+      <text>{{work.likes || 0}}</text>
+    </view>
+    <view class="action-item" bindtap="doCollect">
+      <text class="icon {{isCollected ? 'collected' : ''}}">⭐</text>
+      <text>{{work.collects || 0}}</text>
+    </view>
+    <view class="action-item" wx:if="{{work.commentCount !== undefined}}">
+      <text class="icon">💬</text>
+      <text>{{work.commentCount || 0}}</text>
+    </view>
+  </view>
+</view>

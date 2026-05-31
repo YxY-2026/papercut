@@ -1,0 +1,82 @@
+<view class="container">
+  <!-- 角数选择 -->
+  <view class="fold-selector">
+    <view class="fold-btn {{foldType==4?'active':''}}" bindtap="selectFold" data-type="4">四角</view>
+    <view class="fold-btn {{foldType==6?'active':''}}" bindtap="selectFold" data-type="6">六角</view>
+    <view class="fold-btn {{foldType==8?'active':''}}" bindtap="selectFold" data-type="8">八角</view>
+  </view>
+
+  <!-- 画布区域 -->
+  <view class="canvas-area">
+    <canvas type="2d" id="paperCanvas" class="paper-canvas" disable-scroll="true" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd" bindtouchcancel="onTouchEnd"></canvas>
+  </view>
+
+  <!-- 工具栏 -->
+  <view class="toolbar">
+    <view class="tool-btn {{tool==='pen'?'active':''}}" bindtap="selectTool" data-tool="pen">✏️ 画笔</view>
+    <view class="tool-btn {{tool==='eraser'?'active':''}}" bindtap="selectTool" data-tool="eraser">🧹 橡皮</view>
+    <view class="tool-btn" bindtap="openBrushDialog">⚙️ 笔刷</view>
+    <view class="tool-btn" bindtap="undo" disabled="{{historyIndex<=0}}">↩️ 撤销</view>
+    <view class="tool-btn" bindtap="redo" disabled="{{historyIndex>=history.length-1}}">↪️ 重做</view>
+    <view class="tool-btn" bindtap="openClearDialog">🗑️ 清空</view>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="action-bar">
+    <view class="action-btn expand-btn" bindtap="expandPreview">✨ 展开预览</view>
+    <view class="action-btn save-btn" bindtap="saveToAlbum">💾 保存相册</view>
+  </view>
+
+  <!-- 清空确认弹窗 -->
+  <view class="dialog-overlay {{showClearDialog?'show':''}}" bindtap="closeClearDialog">
+    <view class="dialog {{showClearDialog?'show':''}}" catchtap="noop">
+      <view class="dialog-title">确认清空画布</view>
+      <view class="dialog-content">清空后无法恢复，确定要清空吗？</view>
+      <view class="dialog-btns">
+        <view class="dialog-btn cancel" bindtap="closeClearDialog">取消</view>
+        <view class="dialog-btn confirm" bindtap="clearCanvas">确认清空</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 笔刷设置弹窗 -->
+  <view class="dialog-overlay {{showBrushDialog?'show':''}}" bindtap="closeBrushDialog">
+    <view class="dialog {{showBrushDialog?'show':''}}" catchtap="noop">
+      <view class="dialog-title">笔刷设置</view>
+      <view class="dialog-content">
+        <view class="setting-item">
+          <text>大小：{{brushSize}}px</text>
+          <slider min="2" max="30" value="{{brushSize}}" bindchange="setBrushSize" show-value="false"></slider>
+        </view>
+        <view class="setting-item">
+          <text>颜色</text>
+          <view class="color-picker">
+            <view class="color-opt {{brushColor==='#FFFFFF'?'active':''}}" style="background:#FFFFFF;border:2px solid #ddd;" bindtap="setBrushColor" data-color="#FFFFFF"></view>
+            <view class="color-opt {{brushColor==='#FF0000'?'active':''}}" style="background:#FF0000;" bindtap="setBrushColor" data-color="#FF0000"></view>
+            <view class="color-opt {{brushColor==='#000000'?'active':''}}" style="background:#000000;" bindtap="setBrushColor" data-color="#000000"></view>
+          </view>
+        </view>
+      </view>
+      <view class="dialog-btns">
+        <view class="dialog-btn confirm" bindtap="closeBrushDialog">完成</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 展开预览弹窗 -->
+  <view class="dialog-overlay {{showExpandDialog?'show':''}}" bindtap="closeExpandDialog">
+    <view class="dialog expand-dialog {{showExpandDialog?'show':''}}" catchtap="noop">
+      <view class="dialog-title">展开预览</view>
+      <view class="dialog-content">
+        <canvas type="2d" id="previewCanvas" class="preview-canvas"></canvas>
+      </view>
+      <view class="dialog-btns">
+        <view class="dialog-btn cancel" bindtap="closeExpandDialog">关闭</view>
+        <view class="dialog-btn confirm" bindtap="saveExpandedToAlbum">保存窗花</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 保存成功提示 -->
+  <view class="toast {{showToast?'show':''}}">{{toastMsg}}</view>
+</view>

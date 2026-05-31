@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "智能生成",
+  "usingComponents": {
+    "comp": "../../comp"
+  }
+}

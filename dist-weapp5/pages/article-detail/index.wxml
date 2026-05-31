@@ -1,0 +1,12 @@
+<view class="page">
+  <view class="top-bar">
+    <text class="back" bindtap="goBack">‹ 返回</text>
+  </view>
+  <image wx:if="{{image}}" class="cover" src="{{image}}" mode="widthFix" bindtap="previewImage"></image>
+  <view class="body">
+    <text class="title">{{title}}</text>
+    <text wx:if="{{subtitle}}" class="subtitle">{{subtitle}}</text>
+    <text class="content">{{content}}</text>
+    <button class="btn" bindtap="goGallery">去社区看更多作品</button>
+  </view>
+</view>

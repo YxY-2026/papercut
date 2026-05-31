@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/access/index",
+    "pages/index/index",
+    "pages/create/index",
+    "pages/generate/index",
+    "pages/gallery/index",
+    "pages/gallery/detail/index",
+    "pages/author/index",
+    "pages/profile/index",
+    "pages/profile/works/index",
+    "pages/profile/favorites/index",
+    "pages/profile/messages/index",
+    "pages/crop/index",
+    "pages/article-detail/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fef7ed",
+    "navigationBarTitleText": "智能剪纸",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fef7ed"
+  },
+  "tabBar": {
+    "color": "#78716c",
+    "selectedColor": "#c8161d",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/tabbar/home.png",
+        "selectedIconPath": "assets/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/create/index",
+        "text": "创作",
+        "iconPath": "assets/tabbar/palette.png",
+        "selectedIconPath": "assets/tabbar/palette-active.png"
+      },
+      {
+        "pagePath": "pages/generate/index",
+        "text": "生成",
+        "iconPath": "assets/tabbar/image.png",
+        "selectedIconPath": "assets/tabbar/image-active.png"
+      },
+      {
+        "pagePath": "pages/gallery/index",
+        "text": "社区",
+        "iconPath": "assets/tabbar/grid.png",
+        "selectedIconPath": "assets/tabbar/grid-active.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "assets/tabbar/users.png",
+        "selectedIconPath": "assets/tabbar/users-active.png"
+      }
+    ]
+  }
+}

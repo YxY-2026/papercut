@@ -1,0 +1,128 @@
+page {
+  background: #f9f3e8;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* 顶部红色弧形 */
+.header-top {
+  width: 100%;
+  height: 200rpx;
+  background: #c8161d;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+/* 剪纸图标 */
+.icon-box {
+  width: 160rpx;
+  height: 160rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -80rpx;
+  box-shadow: 0 8rpx 16rpx rgba(0,0,0,0.1);
+}
+
+.paper-cut-icon {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+/* 标题区域 */
+.title-section {
+  text-align: center;
+  margin: 60rpx 0 80rpx;
+}
+
+.main-title {
+  font-size: 60rpx;
+  font-weight: bold;
+  color: #c8161d;
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #888;
+}
+
+/* 登录卡片 */
+.login-card {
+  width: 82%;
+  background: #fff;
+  border-radius: 32rpx;
+  padding: 80rpx 50rpx;
+  box-shadow: 0 10rpx 30rpx rgba(0,0,0,0.07);
+  text-align: center;
+  box-sizing: border-box; /* 关键！防止padding撑大盒子 */
+}
+
+.card-title {
+  font-size: 38rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 60rpx;
+}
+
+/* 输入框容器 */
+.input-group {
+  width: 100%;
+  margin-bottom: 40rpx;
+}
+
+/* 输入框核心修复：加box-sizing，防止超出 */
+.input-item {
+  width: 100%;
+  height: 88rpx;
+  border: 1rpx solid #e8e8e8;
+  border-radius: 16rpx;
+  padding: 0 28rpx;
+  font-size: 28rpx;
+  background: #fafafa;
+  box-sizing: border-box; /* 关键！padding算进宽度里，不会凸出去 */
+}
+
+.input-item:focus {
+  border-color: #c8161d;
+  background: #fff;
+}
+
+/* 登录按钮 */
+.login-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #c8161d, #a10e0e);
+  color: #fff !important;
+  border-radius: 50rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  border: none;
+  margin-top: 40rpx;
+}
+
+.login-btn::after {
+  border: none;
+}
+
+.switch-mode {
+  margin-top: 32rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #c8161d;
+}
+
+.privacy-tip {
+  margin-top: 60rpx;
+  font-size: 22rpx;
+  color: #999;
+}

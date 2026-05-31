@@ -1,0 +1,89 @@
+<view class="min-h-screen bg-orange-50 pb-20">
+  <!-- 用户信息卡片 -->
+  <view class="mx-4 mt-4 bg-white rounded-xl shadow-sm">
+    <view class="p-6">
+      <view class="flex items-center gap-4 mb-4">
+        <image src="{{userInfo.avatar}}" mode="aspectFill" class="w-20 h-20 rounded-full border-4 border-red-100"></image>
+        <view class="flex-1">
+          <text class="block text-xl font-bold text-stone-900 mb-1">{{userInfo.nickname}}</text>
+          <text class="block text-sm text-stone-500 mb-2">{{userInfo.bio}}</text>
+          <view class="inline-flex items-center px-3 py-1 rounded-full border border-stone-300" bindtap="handleEditProfile">
+            <text class="text-xs text-stone-600">编辑资料</text>
+          </view>
+        </view>
+      </view>
+      <view class="flex justify-around py-4 border-t border-stone-200">
+        <view class="text-center">
+          <text class="block text-2xl font-bold text-stone-900">{{worksCount}}</text>
+          <text class="block text-xs text-stone-500">作品</text>
+        </view>
+        <view class="text-center">
+          <text class="block text-2xl font-bold text-stone-900">{{userInfo.likesCount}}</text>
+          <text class="block text-xs text-stone-500">获赞</text>
+        </view>
+        <view class="text-center">
+          <text class="block text-2xl font-bold text-stone-900">{{userInfo.followersCount}}</text>
+          <text class="block text-xs text-stone-500">粉丝</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 菜单列表 -->
+  <view class="px-4 py-4">
+    <!-- 我的收藏 -->
+    <view class="bg-white rounded-xl shadow-sm mb-3" bindtap="goToFavorites">
+      <view class="p-4 flex items-center justify-between">
+        <view class="flex items-center gap-3">
+          <text class="text-red-600">❤️</text>
+          <text class="block text-base text-stone-900">我的收藏</text>
+        </view>
+        <view class="flex items-center gap-2">
+          <text class="text-xs text-stone-500">{{favoritesCount}}</text>
+          <text class="text-stone-400">›</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 我的作品 -->
+    <view class="bg-white rounded-xl shadow-sm mb-3" bindtap="goToWorks">
+      <view class="p-4 flex items-center justify-between">
+        <view class="flex items-center gap-3">
+          <text class="text-amber-600">🎨</text>
+          <text class="block text-base text-stone-900">我的作品</text>
+        </view>
+        <view class="flex items-center gap-2">
+          <text class="text-xs text-stone-500">{{worksCount}}</text>
+          <text class="text-stone-400">›</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 互动消息 -->
+    <view class="bg-white rounded-xl shadow-sm mb-3" bindtap="goToMessages">
+      <view class="p-4 flex items-center justify-between">
+        <view class="flex items-center gap-3">
+          <text class="text-blue-600">💬</text>
+          <text class="block text-base text-stone-900">互动消息</text>
+        </view>
+        <view class="flex items-center gap-2">
+          <view wx:if="{{unreadMessages > 0}}" class="bg-red-600 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+            <text class="text-white" style="font-size: 10px;">{{unreadMessages}}</text>
+          </view>
+          <text class="text-stone-400">›</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 设置 -->
+  <view class="px-4 mb-4">
+    <view class="bg-white rounded-xl shadow-sm" bindtap="goToSettings">
+      <view class="p-4 flex items-center gap-3">
+        <text class="text-stone-600">⚙️</text>
+        <text class="block text-base text-stone-900">设置</text>
+        <text class="text-stone-400 ml-auto">›</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<view class="page-container">
+  <view class="page-header">
+    <text class="page-title">我的收藏</text>
+    <text class="page-sub">与社区收藏同步</text>
+  </view>
+
+  <view wx:if="{{favorites.length === 0}}" class="empty-box">
+    <text class="empty-text">暂无收藏，去社区逛逛吧～</text>
+  </view>
+
+  <view
+    wx:for="{{favorites}}"
+    wx:key="id"
+    class="work-card"
+    bindtap="goDetail"
+    data-id="{{item.id}}"
+  >
+    <image class="work-img" src="{{item.image}}" mode="aspectFill"></image>
+    <view class="work-body">
+      <text class="work-title">{{item.title}}</text>
+      <text class="work-author">作者：{{item.author}}</text>
+      <view class="work-meta">
+        <text>❤️ {{item.likes || 0}}</text>
+        <text>⭐ {{item.collects || 0}}</text>
+      </view>
+      <view class="btn-row" catchtap="noop">
+        <view class="btn-outline" catchtap="handleDownload" data-id="{{item.id}}">下载</view>
+        <view class="btn-warn" catchtap="handleUnfavorite" data-id="{{item.id}}">取消收藏</view>
+      </view>
+    </view>
+  </view>
+</view>

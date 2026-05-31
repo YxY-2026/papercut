@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="search-box">
+    <input class="search-input" placeholder="搜索作品 / 作者" bindinput="onSearch"/>
+  </view>
+
+  <view class="work-list">
+    <view class="work-item" wx:for="{{workList}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
+      <image class="work-img" src="{{item.image}}" mode="aspectFill"></image>
+      <view class="work-info">
+        <view class="work-title">{{item.title}}</view>
+        <view class="work-author">作者：{{item.author}}</view>
+        
+        <!-- 已删除：关注作者按钮 -->
+
+        <view class="work-actions">
+          <!-- 只显示数字，不可点击 -->
+          <view class="action-item">❤️ {{item.likes}}</view>
+          <view class="action-item">⭐ {{item.collects}}</view>
+          
+          <!-- 已删除评论 -->
+          <view class="action-item" catchtap="notInterested" data-id="{{item.id}}">不感兴趣</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

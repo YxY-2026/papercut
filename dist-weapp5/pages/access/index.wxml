@@ -1,0 +1,43 @@
+<view class="container">
+  <view class="header-top"></view>
+
+  <!-- 剪纸图标 -->
+  <view class="icon-box">
+    <image class="paper-cut-icon" src="./paper-cut-fu.png" mode="aspectFit"></image>
+  </view>
+
+  <!-- 标题 -->
+  <view class="title-section">
+    <text class="main-title">剪韵</text>
+    <text class="subtitle">AI赋能传统剪纸文化</text>
+  </view>
+
+  <!-- 登录卡片 -->
+  <view class="login-card">
+    <view class="card-title">欢迎来到剪韵</view>
+
+    <view class="input-group">
+      <input class="input-item" placeholder="请输入账号" bindinput="inputAccount" value="{{account}}" />
+    </view>
+
+    <view class="input-group" wx:if="{{isRegister}}">
+      <input class="input-item" placeholder="昵称（可选）" bindinput="inputNickname" value="{{nickname}}" />
+    </view>
+
+    <view class="input-group">
+      <input class="input-item" password placeholder="请输入密码" bindinput="inputPwd" value="{{pwd}}" />
+    </view>
+
+    <button class="login-btn" bindtap="submit">
+      {{isRegister ? '注册账号' : '开启剪纸之旅'}}
+    </button>
+
+    <view class="switch-mode" bindtap="toggleMode">
+      <text>{{isRegister ? '已有账号？去登录' : '没有账号？立即注册'}}</text>
+    </view>
+
+    <view class="privacy-tip">
+      <text>登录即代表同意《用户协议》与《隐私政策》</text>
+    </view>
+  </view>
+</view>

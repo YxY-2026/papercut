@@ -1,0 +1,40 @@
+<view class="min-h-screen bg-orange-50 p-4">
+  <text class="block text-xl font-bold text-stone-900 mb-4">我的作品</text>
+  
+  <view wx:if="{{works.length === 0}}" class="flex flex-col items-center justify-center py-20">
+    <text class="text-stone-400 text-base">还没有作品，快去创作吧～</text>
+  </view>
+  
+  <view wx:for="{{works}}" wx:key="id" class="bg-white rounded-xl shadow-sm mb-4">
+    <view class="p-4">
+      <image src="{{item.image}}" mode="aspectFill" class="w-full h-48 rounded-xl mb-3"></image>
+      <text class="block text-lg font-semibold text-stone-900 mb-1">{{item.title}}</text>
+      <view class="flex items-center justify-between mb-3">
+        <text class="text-xs text-stone-400">{{item.createTime}}</text>
+        <text class="text-xs text-stone-400">♥ {{item.likes}} 💬 {{item.comments}}</text>
+      </view>
+      <view class="flex gap-2">
+        <view class="flex-1" bindtap="handleDownload" data-id="{{item.id}}">
+          <view class="px-3 py-2 rounded-lg border border-stone-300 flex items-center justify-center">
+            <text class="text-sm text-stone-600">⬇️ 下载</text>
+          </view>
+        </view>
+        <view class="flex-1" bindtap="handlePublish" data-id="{{item.id}}">
+          <view class="px-3 py-2 rounded-lg border border-stone-300 flex items-center justify-center">
+            <text class="text-sm text-stone-600">📤 社区</text>
+          </view>
+        </view>
+        <view class="flex-1" bindtap="handleEdit" data-id="{{item.id}}">
+          <view class="px-3 py-2 rounded-lg border border-stone-300 flex items-center justify-center">
+            <text class="text-sm text-stone-600">✏️ 编辑</text>
+          </view>
+        </view>
+        <view bindtap="handleDelete" data-id="{{item.id}}">
+          <view class="px-3 py-2 rounded-lg border border-red-200 flex items-center justify-center">
+            <text class="text-sm text-red-600">🗑️</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

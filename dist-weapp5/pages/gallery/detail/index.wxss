@@ -1,0 +1,117 @@
+page {
+  background: #fef7ed;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.page-container {
+  padding: 0 24rpx 40rpx;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  height: 88rpx;
+  position: relative;
+}
+
+.back-btn {
+  font-size: 48rpx;
+  color: #c8161d;
+  width: 64rpx;
+  line-height: 64rpx;
+}
+
+.page-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #292524;
+}
+
+.work-img {
+  width: 100%;
+  border-radius: 16rpx;
+  margin-top: 16rpx;
+  background: #fff;
+  min-height: 320rpx;
+}
+
+.work-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1c1917;
+  margin-top: 24rpx;
+}
+
+.author-bar {
+  display: flex;
+  align-items: center;
+  margin-top: 24rpx;
+}
+
+.author-info-wrap {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.avatar {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c8161d, #8b0000);
+}
+
+.author-name {
+  margin-left: 16rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #44403c;
+}
+
+.follow-btn {
+  width: 160rpx !important;
+  height: 64rpx !important;
+  line-height: 64rpx !important;
+  font-size: 26rpx !important;
+  border-radius: 32rpx !important;
+  background: #c8161d !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.follow-btn.followed {
+  background: #e7e5e4 !important;
+  color: #57534e !important;
+}
+
+.action-bar {
+  display: flex;
+  gap: 48rpx;
+  margin-top: 32rpx;
+  padding: 24rpx;
+  background: #fff;
+  border-radius: 16rpx;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  font-size: 28rpx;
+  color: #57534e;
+}
+
+.action-item .icon.liked {
+  filter: none;
+}
+
+.action-item .icon.collected {
+  color: #d97706;
+}

@@ -1,0 +1,31 @@
+<view class="container">
+  <view class="top-bar">
+    <view class="back" bindtap="goBack">返回</view>
+  </view>
+
+  <view class="author-info">
+    <view class="name">{{author}}</view>
+    <view class="stats">
+      <text>作品 {{workTotal}}</text>
+      <text>粉丝 {{fanTotal}}</text>
+      <text>关注 {{followTotal}}</text>
+    </view>
+
+    <button class="follow-btn {{isFollowed ? 'followed' : ''}}" bindtap="followAuthor">
+      {{isFollowed ? '已关注' : '关注'}}
+    </button>
+  </view>
+
+  <view class="list-title">TA的作品</view>
+
+  <view class="work-list">
+    <view class="item" wx:for="{{workList}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}" hover-class="item-hover">
+      <image class="img" src="{{item.image}}"></image>
+      <view class="title">{{item.title}}</view>
+      <view class="info">
+        <text>❤️ {{item.likes || item.like_count || 0}}</text>
+        <text>⭐ {{item.collects || item.collect_count || 0}}</text>
+      </view>
+    </view>
+  </view>
+</view>
